@@ -1,0 +1,5 @@
+@use 'basic.scss' as bs;
+
+div{
+    background-color: bs.$bg;
+}

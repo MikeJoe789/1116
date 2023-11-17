@@ -1,0 +1,20 @@
+$greenColor:#0bdf9c;
+$textColor:#666666;
+$borderColor:#999999;
+$bgColor:#eeeeee;
+
+@mixin sect(){
+    padding: 2rem 3rem;
+    color: $textColor;
+    border: 0.1rem solid $borderColor;
+    border-radius: 0.4rem;
+    background-color: $bgColor;
+    &:hover{
+        color: $greenColor; 
+        background-color: $bgColor;
+    }
+}
+
+section{
+    @include sect();
+}

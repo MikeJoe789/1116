@@ -1,0 +1,15 @@
+$b-g:#d83b3b;
+$b_g:rgb(38, 113, 226);
+body{
+  background: $b_g;
+}
+
+.d1{
+  background: $b-g;
+}
+.d2{
+  background: $b_g;
+}
+p{
+  background: $b-g;
+}
