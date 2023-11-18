@@ -1,15 +1,31 @@
-$b-g:#d83b3b;
-$b_g:rgb(38, 113, 226);
-body{
-  background: $b_g;
+@use 'sass:map';
+@use 'sass:color';
+
+@mixin btn($name:'',$colorGreen:#00b62e, $colorWhite:#ffffff,$volat:true,){
+  .btn#{$name}{
+    @if $volat {
+      border-radius: 0.3rem;
+    } @else {
+      border-radius: 10%;
+    }
+    color: $colorWhite;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: 0;
+    background-color: $colorGreen;
+    margin: 1rem;
+    &:hover{
+      color: color.adjust($colorWhite,$lightness:30%);
+    }
+  }
 }
 
-.d1{
-  background: $b-g;
-}
-.d2{
-  background: $b_g;
-}
-p{
-  background: $b-g;
+$button:(
+  '-html': (#81ec9c #f26541 false),
+  '-css':(#48f874 #e9204b true),
+  '-js':(#00b62e #1a5786 false)
+);
+
+@each $key, $value in $button{
+  @include btn($key, $value...);
 }

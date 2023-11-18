@@ -1,20 +1,19 @@
-$greenColor:#0bdf9c;
-$textColor:#666666;
-$borderColor:#999999;
-$bgColor:#eeeeee;
 
-@mixin sect(){
-    padding: 2rem 3rem;
-    color: $textColor;
-    border: 0.1rem solid $borderColor;
-    border-radius: 0.4rem;
-    background-color: $bgColor;
-    &:hover{
-        color: $greenColor; 
-        background-color: $bgColor;
+@mixin btn($name:"", $bgc:#148a65, $col:#c72626){
+    .btn#{$name}{
+        border: 0;
+        border-radius: 0.6rem;
+        background-color: $bgc;
+        color: $col;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 1rem 1.5rem;
+        display: inline-block;
+        cursor: pointer;
     }
 }
 
-section{
-    @include sect();
+$buttens: "", -sec #19a574 #994aa4, -tid #ecd081 #550808;
+@each $name, $bgc, $col in $buttens{
+    @include btn($name, $bgc, $col);
 }
